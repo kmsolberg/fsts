@@ -18,6 +18,7 @@ themes/fromstonetoscreen/node_modules/
 # Ignore OS files #
 .DS_Store
 .DS_Store?
+themes/fromstonetoscreen/
 ._*
 .Spotlight-V100
 .Trashes

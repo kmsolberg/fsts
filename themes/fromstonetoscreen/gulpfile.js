@@ -17,7 +17,7 @@ var plumberErrorHandler = {
     })
 };
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
     gulp.src('./sass/style.scss')
         .pipe(plumber(plumberErrorHandler))
         .pipe(sourcemaps.init())
@@ -32,7 +32,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('scripts', ['lint'], function () {
+gulp.task('scripts', ['lint'], function() {
     gulp.src('./js/*.js')
         .pipe(uglify())
         .pipe(rename({
@@ -41,14 +41,14 @@ gulp.task('scripts', ['lint'], function () {
         .pipe(gulp.dest('./build/js'))
 });
 
-gulp.task('lint', function () {
+gulp.task('lint', function() {
     return gulp.src(['./js/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('browser-sync', function () {
+gulp.task('browser-sync', function() {
     var files = [
         './build/css/*.css',
         './build/js/*.js',
@@ -57,7 +57,7 @@ gulp.task('browser-sync', function () {
     ];
 
     browserSync.init(files, {
-        proxy: 'localhost:8888/sgsc',
+        proxy: 'localhost:8888/fsts',
     });
 
     gulp.watch(files).on('change', browserSync.reload);
